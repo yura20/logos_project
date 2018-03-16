@@ -13,3 +13,9 @@ def article_view(request, art_id):
         'comment': comment
     }
     return render(request, 'main/single_article.html', context)
+def main_view(request):
+    articles = Article.objects.all()[:10]
+    context = {
+        "articles": articles,
+    }
+    return render(request, 'main/home.html', context)

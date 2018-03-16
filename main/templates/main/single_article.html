@@ -5,7 +5,7 @@
 <!-- Author -->
 <p class="lead">
     by
-    <a href="#">Start Bootstrap</a>
+    <a href="#">{{article.author.username}}</a>
 </p>
 
 <hr>
@@ -22,6 +22,7 @@
     {{ article.content }}
 </p>
 
+<a href="{% url 'main:home' %}">Back to home</a>
 <hr>
 
 <!-- Comments Form -->

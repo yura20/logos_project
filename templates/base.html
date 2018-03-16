@@ -49,7 +49,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container base-cont ">
       <div class="row">
 
         <!-- Post Content Column -->
@@ -61,7 +61,19 @@
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
           {% block sidebar %}
-            
+          <h3>Latest Articles</h3>
+          {% for article in latest_articles%}
+           <div>
+            <a href="{{article.get_absolute_url}}">{{article.title}}</a>
+            <p>{{artiles.content}}</p>
+            </div>
+            {% endfor %}
+            <h3>Comments</h3>
+          {% for comment in articles_comments%}
+           <div>
+            <a href="{{comment.article.get_absolute_url}}">{{comment.content}}</a>
+            </div>
+            {% endfor %}
           {% endblock sidebar %}
         </div>
 
