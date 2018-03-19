@@ -30,14 +30,13 @@ class Article(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Author",
     )
-    
+
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
 
     def __str__(self):
         return self.title
-    
+
     def get_absolute_url(self):
         return reverse("main:single_art", args=[self.id])
-    

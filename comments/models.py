@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Comment(models.Model):
 
@@ -11,7 +11,10 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Article'
     )
-
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+    )
     class Meta:
         verbose_name = 'Comment'
         verbose_name_plural = 'Comments'

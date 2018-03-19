@@ -1,0 +1,6 @@
+<form action="{% url 'comments:add_comment' article_id=article_id %}" method="post">
+   {% csrf_token %}
+    <textarea name="comment_body" id="" cols="90" rows="6"></textarea>
+    <br>
+    <button type="submit">Add comment</button>
+</form>
